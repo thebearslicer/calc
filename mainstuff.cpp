@@ -26,7 +26,7 @@ int main() {
 	std::cout << "Enter op (+,-,*,/,^,r,s,t,c,f) \n"; //get operators 
 	std::cin >> op; 
 
-	if (op == '+' || '-' || '*' || '/' || '^' || 'r' || 's' || 't' || 'c')
+	if (op == '+' || '-' || '*' || '/' || '^' || 'r' || 's' || 't' || 'c') //this doesn't work
 	{
 		std::cout << "Enter two numbers \n";
 		std::cin >> num1 >> num2; //get numbers
