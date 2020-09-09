@@ -17,21 +17,31 @@ int findFactorial() {
 	return 0;
 }
 
-
 int main() {
 
 	char op; //var that stores operator
 	float num1, num2; //numbers
-	
-	std::cout << "Enter op (+,-,*,/,^,r,s,t,c,f) \n"; //get operators 
-	std::cin >> op; 
 
-	if (op == '+' || '-' || '*' || '/' || '^' || 'r' || 's' || 't' || 'c') //this doesn't work
-	{
-		std::cout << "Enter two numbers \n";
-		std::cin >> num1 >> num2; //get numbers
+	std::cout << "Enter op (+,-,*,/,^,r,s,t,c,f) \n"; //get operators 
+	std::cin >> op;
+
+	for (const char* sop = "+-*/^"; *sop; ++sop) {
+		if (op == *sop) {
+			std::cout << "Enter two numbers\n";
+			std::cin >> num1 >> num2;
+			break;
+		}
 	}
-	switch (op) 
+
+	for (const char* sop = "rstc"; *sop; ++sop) {
+		if (op == *sop) {
+			std::cout << "Enter one number\n";
+			std::cin >> num1;
+			break;
+		}
+	}
+	
+	switch (op)
 	{
 	case '+':
 		std::cout << num1 + num2;
@@ -48,7 +58,7 @@ int main() {
 			std::cout << num1 / num2;
 			break;
 		}
-						//check for div by 0
+		//check for div by 0
 		else {
 			std::cout << "Cannot divide by 0!";
 			break;
@@ -69,17 +79,13 @@ int main() {
 	case 'c':
 		std::cout << cos(num1);
 		break;
-
 	case 'f':
 		findFactorial();
 		break;
-
 	default:
 		std::cout << "The operator is incorrect";
 		break;
 
 	}
-	return 0; 
+	return 0;
 }
-
-
