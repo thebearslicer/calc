@@ -1,6 +1,23 @@
 #include <iostream>
 #include <math.h>
 
+int findFactorial() {
+
+	unsigned int num;
+	unsigned long long factorial = 1;
+
+	std::cout << "Enter possitive integer: ";
+	std::cin >> num;
+
+	for (int i = 1; i <= num; ++i)
+	{
+		factorial *= i;
+	}
+	std::cout << "Factorial of " << num << " = " << factorial;
+	return 0;
+}
+
+
 int main() {
 
 	char op; //var that stores operator
@@ -66,18 +83,3 @@ int main() {
 }
 
 
-int findFactorial() {
-
-	unsigned int num;
-	unsigned long long factorial = 1;
-
-	std::cout << "Enter possitive integer: ";
-	std::cin >> num;
-
-	for (int i = 1; i <= num; ++i)
-	{
-		factorial *= i;
-	}
-	std::cout << "Factorial of " << num << " = " << factorial;
-	return 0;
-}
