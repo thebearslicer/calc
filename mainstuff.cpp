@@ -6,12 +6,14 @@ int main() {
 	char op; //var that stores operator
 	float num1, num2; //numbers
 	
-	std::cout << "Enter op (+,-,*,/,^,r,s,t,c) \n"; //get operators 
+	std::cout << "Enter op (+,-,*,/,^,r,s,t,c,f) \n"; //get operators 
 	std::cin >> op; 
 
-	std::cout << "Enter two numbers \n";
-	std::cin >> num1 >> num2; //get numbers
-	
+	if (op == '+' || '-' || '*' || '/' || '^' || 'r' || 's' || 't' || 'c')
+	{
+		std::cout << "Enter two numbers \n";
+		std::cin >> num1 >> num2; //get numbers
+	}
 	switch (op) 
 	{
 	case '+':
@@ -51,10 +53,31 @@ int main() {
 		std::cout << cos(num1);
 		break;
 
+	case 'f':
+		findFactorial();
+		break;
+
 	default:
 		std::cout << "The operator is incorrect";
 		break;
 
 	}
 	return 0; 
+}
+
+
+int findFactorial() {
+
+	unsigned int num;
+	unsigned long long factorial = 1;
+
+	std::cout << "Enter possitive integer: ";
+	std::cin >> num;
+
+	for (int i = 1; i <= num; ++i)
+	{
+		factorial *= i;
+	}
+	std::cout << "Factorial of " << num << " = " << factorial;
+	return 0;
 }
