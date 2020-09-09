@@ -1,50 +1,58 @@
 #include <iostream>
 #include <math.h>
-using namespace std;
 
 int main() {
 
 	char op; //var that stores operator
 	float num1, num2; //numbers
 	
-	cout << "Enter op (+,-,*,/,^,s) \n"; //get operators 
-	cin >> op; 
+	std::cout << "Enter op (+,-,*,/,^,r,s,t,c) \n"; //get operators 
+	std::cin >> op; 
 
-	cout << "Enter two numbers \n";
-	cin >> num1 >> num2; //get numbers
+	std::cout << "Enter two numbers \n";
+	std::cin >> num1 >> num2; //get numbers
 	
 	switch (op) 
 	{
 	case '+':
-		cout << num1 + num2;
+		std::cout << num1 + num2;
 		break;
 	case '-':
-		cout << num1 - num2;
+		std::cout << num1 - num2;
 		break;
 	case '*':
-		cout << num1 * num2;
+		std::cout << num1 * num2;
 		break;
 	case '/':
 
 		if (num2 != 0) {
-			cout << num1 / num2;
+			std::cout << num1 / num2;
 			break;
 		}
 						//check for div by 0
 		else {
-			cout << "Cannot divide by 0!";
+			std::cout << "Cannot divide by 0!";
 			break;
 		}
 
 	case '^':
-		cout << pow(num1, num2);
+		std::cout << pow(num1, num2);
+		break;
+	case 'r':
+		std::cout << sqrt(num1);
 		break;
 	case 's':
-		cout << sqrt(num1);
+		std::cout << sin(num1);
+		break;
+	case 't':
+		std::cout << tan(num1);
+		break;
+	case 'c':
+		std::cout << cos(num1);
 		break;
 
 	default:
-		cout << "The operator is incorrect";
+		std::cout << "The operator is incorrect";
 		break;
 
 	}
